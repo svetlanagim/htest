@@ -1,0 +1,203 @@
+@use "vars" as v;
+
+.services {
+    margin: 30px;
+    @media screen and (min-width: v.$breakpoint-md) {
+        //  768
+        margin: 60px;
+    }
+    @media screen and (min-width: v.$breakpoint-xxl) {
+        //  1920
+        margin: 0 auto;
+    }
+
+    // .services__name
+
+    &__name {
+        margin-bottom: 30px;
+
+        // .services__name-link
+
+        &-link {
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: v.$active-regular;
+        }
+
+        // .services__name-title
+
+        &-title {
+            font-weight: 700;
+            font-size: 30px;
+            background: v.$gradient-red-text;
+            background-clip: text;
+            color: transparent;
+            margin-top: 10px;
+            @media screen and (min-width: v.$breakpoint-md) {
+                //  768
+                font-size: 38px;
+            }
+        }
+    }
+
+    // .services__cards
+
+    &__cards {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 60px;
+
+        @media screen and (min-width: v.$breakpoint-md) {
+            //  768
+
+            gap: 60px;
+        }
+    }
+
+    // .services__card
+
+    &__card {
+        flex: 1 0 100%;
+        &:hover img {
+            transform: scale(1.1);
+        }
+
+        // .services__card-img
+        @media screen and (min-width: v.$breakpoint-md) {
+            //  768
+            flex: 1 0 40%;
+        }
+
+        @media screen and (min-width: v.$breakpoint-lg) {
+            //  1024
+            flex: 1 0 30%;
+        }
+
+        &-img {
+            border-radius: 24px;
+            padding: 14px;
+            width: 92px;
+            height: 92px;
+            background: v.$basic-white;
+            margin-bottom: 30px;
+        }
+
+        // .services__card-name
+
+        &-name {
+            font-weight: 700;
+            font-size: 22px;
+            color: v.$active-regular;
+            margin-bottom: 15px;
+        }
+
+        // .services__card-title
+
+        &-title {
+            font-size: 16px;
+            line-height: 26px;
+            color: v.$basic-white;
+        }
+    }
+}
+
+.serviceentry {
+    // .serviceentry__name
+    @media screen and (min-width: v.$breakpoint-xl) {
+        //   //  1440
+        margin-left: 120px;
+        margin-right: 120px;
+    }
+    @media screen and (min-width: v.$breakpoint-xxl) {
+        //  1920
+        margin-top: 60px;
+    }
+    &__name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        border-bottom: 4px solid rgba(255, 255, 255, 0.5);
+        padding-bottom: 30px;
+        // .serviceentry__name-title
+
+        &-title {
+            font-size: 19px;
+            line-height: 30px;
+            text-align: center;
+            color: v.$basic-white;
+        }
+    }
+
+    // .serviceentry__button
+
+    &__button {
+        padding: 18px 30px;
+        background: #24a3ff;
+        box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
+        border: none;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: v.$basic-white;
+        cursor: pointer;
+    }
+
+    // .serviceentry__title
+
+    &__title {
+        color: v.$basic-white;
+        padding-top: 30px;
+        padding-left: 30px;
+        padding-bottom: 60px;
+        // .serviceentry__title-name
+
+        &-name {
+            font-weight: 700;
+            font-size: 22px;
+            margin-left: -30px;
+        }
+    }
+
+    // .serviceentry__list
+    &__listi {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        @media screen and (min-width: v.$breakpoint-md) {
+            //  768
+            gap: 60px;
+            flex-direction: row;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        font-size: 18px;
+        line-height: 26px;
+        flex: 1 1 30px;
+
+        @media screen and (min-width: v.$breakpoint-md) {
+            //  768
+            min-width: 294px;
+        }
+
+        // .serviceentry__list-li
+
+        &-li {
+            list-style-type: disc;
+
+            &::marker {
+                color: v.$accent;
+            }
+        }
+    }
+}

@@ -1,0 +1,159 @@
+@use "vars" as v;
+
+body {
+  font-family: "Montserrat";
+  color: v.$basic-black;
+  font-weight: 400;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+  color: v.$basic-white;
+  cursor: pointer;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 30px;
+  background: v.$gradient-red-text;
+  background-clip: text;
+  color: transparent;
+  margin-top: 10px;
+  @media screen and (min-width: v.$breakpoint-md) {
+    //  768
+    font-size: 38px;
+  }
+}
+.activ {
+  background: v.$accent;
+}
+
+.dot {
+  background: #e6e6f0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: none;
+
+  @media screen and (min-width: v.$breakpoint-md) {
+    //  768
+    display: inline-block;
+  }
+}
+
+.background {
+  background: v.$gradient-supersoft;
+  border-radius: 0 0 12px 12px;
+  position: relative;
+  margin-bottom: 50px;
+
+  @media screen and (min-width: v.$breakpoint-md) {
+    //  768
+    margin-bottom: 80px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 10px;
+    right: 20px;
+    left: 20px;
+    bottom: -10px;
+    background: #cacadb;
+    border-radius: 0 0 12px 12px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    height: 10px;
+    left: 40px;
+    right: 40px;
+    bottom: -20px;
+    background: #e7e7f2;
+    border-radius: 0 0 12px 12px;
+  }
+}
+
+.head {
+  background: url(../img/Global/Symbol.svg) no-repeat center/auto 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  padding-bottom: 30px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 38px;
+    text-align: center;
+    color: v.$basic-white;
+    padding: 0 60px;
+  }
+  &__button {
+    display: block;
+    margin: 0 auto;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    border: 2px solid v.$basic-white;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 11px;
+      width: 16px;
+      height: 16px;
+      border-bottom: 2px solid v.$basic-white;
+      border-left: 2px solid v.$basic-white;
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      border-color: v.$accent;
+
+      &::before {
+        border-color: v.$accent;
+      }
+    }
+  }
+}
+
+.container {
+  // max-width: 375px;
+  margin: 0 auto;
+
+  @media screen and (min-width: v.$breakpoint-md) {
+    //  768
+    min-width: 648px;
+    // margin: 0 auto;
+  }
+  @media screen and (min-width: v.$breakpoint-lg) {
+    //  1024
+    min-width: 904px;
+  }
+
+  @media screen and (min-width: v.$breakpoint-xl) {
+    //  1440
+    min-width: 1320px;
+  }
+  @media screen and (min-width: v.$breakpoint-xxl) {
+    //  1920
+    max-width: 1600px;
+  }
+}
+
+// @media screen and (min-width: v.$breakpoint-md) {
+//   //  768
+// }
+// @media screen and (min-width: v.$breakpoint-lg) {
+//   //  1024
+// }
+
+// @media screen and (min-width: v.$breakpoint-xl) {
+//   //  1440
+// }
+// @media screen and (min-width: v.$breakpoint-xxl) {
+//   //  1920
+// }

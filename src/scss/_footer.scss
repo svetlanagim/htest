@@ -1,0 +1,125 @@
+@use "vars" as v;
+
+.footer {
+    display: flex;
+    justify-content: center;
+    background: v.$grey-bg;
+
+    .dot {
+        background: v.$grey-text;
+    }
+    // .footer__conteiner
+
+    &__conteiner {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        border-top: 2px solid v.$grey-separator;
+        margin: 30px;
+        width: 100%;
+        @media screen and (min-width: v.$breakpoint-md) {
+            //  768
+            grid-template-columns: auto 1fr auto;
+            grid-template-rows: auto auto;
+            margin: 30px 60px 30px;
+        }
+
+        @media screen and (min-width: v.$breakpoint-xxl) {
+            //  1920
+            margin-left: 160px;
+            margin-right: 160px;
+        }
+    }
+
+    // .footer__adress
+
+    &__adress {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 21px;
+        margin-top: 30px;
+        align-items: center;
+        color: v.$main-regular;
+
+        @media screen and (min-width: v.$breakpoint-md) {
+            //  768
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            flex-direction: row;
+        }
+
+        a {
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: v.$active-regular;
+
+            &:hover {
+                color: v.$accent;
+            }
+        }
+    }
+
+    // .footer__contacts
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 30px;
+        align-items: center;
+        font-weight: 700;
+        font-size: 16px;
+
+        @media screen and (min-width: v.$breakpoint-md) {
+            //  768
+            grid-column: 1 / 4;
+            grid-row: 2 / 3;
+            flex-direction: row;
+            margin-bottom: 0;
+        }
+
+        // .footer__contacts-phone
+
+        &-phone {
+            color: v.$main-alt;
+        }
+
+        // .footer__contacts-email
+
+        &-email {
+            color: v.$active-regular;
+            &:hover {
+                color: v.$accent;
+            }
+        }
+    }
+
+    // .footer__icon
+
+    &__icon {
+        fill: v.$active-regular;
+        height: 38px;
+        width: 38px;
+
+        &:hover {
+            fill: v.$accent;
+        }
+    }
+
+    // .footer__copyright
+
+    &__copyright {
+        display: flex;
+        color: v.$grey-text;
+
+        @media screen and (min-width: v.$breakpoint-md) {
+            //  768
+            grid-column: 2 / 3;
+            grid-row: 2 /-3;
+            justify-content: end;
+        }
+    }
+}

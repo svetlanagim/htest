@@ -1,0 +1,120 @@
+@use "vars" as v;
+
+.tabs {
+  padding: 30px 30px 0;
+  overflow-x: hidden;
+  @media screen and (min-width: v.$breakpoint-md) {
+    //  768
+    padding: 60px 60px 0;
+  }
+
+  @media screen and (min-width: v.$breakpoint-xxl) {
+    //  1920
+    padding-bottom: 60px;
+    margin: 0 auto;
+  }
+  // .tabs__container
+
+  &__container {
+    @media screen and (min-width: v.$breakpoint-lg) {
+      //   1024
+      display: flex;
+    }
+  }
+
+  // .tabs__list
+
+  &__list {
+    display: flex;
+    gap: 30px;
+    white-space: nowrap;
+    padding-bottom: 30px;
+    overflow: auto;
+    margin-right: -30px;
+
+    @media screen and (min-width: v.$breakpoint-md) {
+      //  768
+      padding: 0 30px 60px 0;
+      margin-right: -60px;
+    }
+
+    @media screen and (min-width: v.$breakpoint-lg) {
+      //    1024
+      flex-flow: column;
+      padding: 0 60px 0 0;
+      margin: 0;
+      overflow: visible;
+      border-right: 4px solid rgba(255, 255, 255, 0.3);
+      flex: 0 1 375px;
+      align-items: flex-end;
+    }
+    @media screen and (min-width: v.$breakpoint-xl) {
+      //   //  1440
+    }
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    // .tabs__list-item
+
+    &-item {
+      font-weight: 700;
+      font-size: 38px;
+      color: v.$grey-text;
+      cursor: pointer;
+
+      &.active {
+        background: v.$gradient-red-reversed;
+        background-clip: text;
+        color: transparent;
+      }
+    }
+  }
+
+  // .tabs__content
+
+  &__content {
+    padding-top: 30px;
+    border-top: 4px solid rgba(255, 255, 255, 0.3);
+
+    @media screen and (min-width: v.$breakpoint-md) {
+      //  768
+      padding: 60px 0 0;
+    }
+
+    @media screen and (min-width: v.$breakpoint-lg) {
+      //   //  1024
+      padding: 0 0 0 60px;
+      border-top: 0;
+      display: flex;
+      align-items: center;
+      flex: 1 1 50%;
+    }
+
+    // .tabs__content-item
+
+    &-item {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+
+    // .tabs__content-title
+
+    &-title {
+      font-weight: 700;
+      font-size: 30px;
+      color: v.$basic-white;
+      margin-bottom: 30px;
+    }
+
+    // .tabs__content-desc
+
+    &-desc {
+      font-size: 19px;
+      line-height: 30px;
+      color: v.$basic-white;
+    }
+  }
+}
